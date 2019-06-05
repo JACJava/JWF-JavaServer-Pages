@@ -17,10 +17,10 @@ public class ControllerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
-        user.setName("JulieCakes");
+        user.setName("JulieCakesExpressionLanguage");
         user.setEmail("juliejava@icloud.com");
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         request.setAttribute("user", user);
         dispatcher.forward(request, response);
     }
