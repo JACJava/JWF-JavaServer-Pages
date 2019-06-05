@@ -7,6 +7,7 @@
     </title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="metro-bootstrap-master/css/metro-bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="app.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <%@include file="_header.jsp" %>
@@ -21,15 +22,11 @@
                 <%= calendar.getTime().toString() %>
             </div>
             <div class="col-md-9">
-                <% User user = (User)request.getAttribute("user");
-                    if(user == null){
-                        user = new User();
-                    }
-                %>
-                <tabset>
+            <tabset>
                     <tab heading="Search">
-                        <div>
-                            <h2>Welcome <%= user.getName() %></h2>
+                        <div class="${app.formCssClass.name}">
+
+                            <h2>Welcome ${ user.name }</h2>
                             <form action="home" method="post">
                                 <p>
                                     Name: <input type="text" name="name"/>

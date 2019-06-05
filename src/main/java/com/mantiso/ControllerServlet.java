@@ -7,10 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by kevinj.
- */
+
+
 public class ControllerServlet extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        ApplicationSettings applicationSettings = new ApplicationSettings();
+        CssClass cssClass = new CssClass();
+        cssClass.setName("redUser");
+        applicationSettings.setformCssClass(cssClass);
+        getServletContext().setAttribute("app", applicationSettings );
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
