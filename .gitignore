@@ -65,10 +65,11 @@ Servers/
 # Maven
 log/
 target/
+target\
 
 # Default
 /build/
 /target/
 /.metadata/
 /.recommenders/
-
+\target\
