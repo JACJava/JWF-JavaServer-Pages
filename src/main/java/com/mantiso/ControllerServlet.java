@@ -16,7 +16,9 @@ public class ControllerServlet extends HttpServlet {
         ApplicationSettings applicationSettings = new ApplicationSettings();
         CssClass cssClass = new CssClass();
         cssClass.setName("redUser");
+        String[] tabNames = {"SignIn", "Home", "Profile", "SettingsJAK"};
         applicationSettings.setformCssClass(cssClass);
+        applicationSettings.setTabNames(tabNames);
         getServletContext().setAttribute("app", applicationSettings );
     }
 
@@ -26,7 +28,7 @@ public class ControllerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
-        user.setName("JulieCakesExpressionLanguage");
+        user.setName("Julie");
         user.setEmail("juliejava@icloud.com");
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
